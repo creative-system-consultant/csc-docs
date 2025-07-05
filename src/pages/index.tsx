@@ -23,16 +23,6 @@ function HomepageHeader() {
             to="/docs/sfms-docs">
             SSM SFMS Documentation
           </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs">
-            View All Documentation
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/blog">
-            Latest Updates
-          </Link>
         </div>
       </div>
     </header>
