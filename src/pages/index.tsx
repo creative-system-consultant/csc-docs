@@ -23,6 +23,11 @@ function HomepageHeader() {
             to="/docs/sfms-docs">
             SSM SFMS Documentation
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/pmgi-docs">
+            TEKUN PMGI Documentation
+          </Link>
         </div>
       </div>
     </header>
