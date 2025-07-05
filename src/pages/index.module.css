@@ -21,3 +21,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.buttons :global(.button) {
+  margin-right: 1rem;
+}
+
+.buttons :global(.button):last-child {
+  margin-right: 0;
+}
