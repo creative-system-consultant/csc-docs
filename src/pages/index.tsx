@@ -21,17 +21,17 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/sfms-docs">
-            SSM SFMS Documentation
+            SSM SFMS
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="/docs/pmgi-docs">
-            TEKUN PMGI Documentation
+            TEKUN PMGI
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="/docs/kap-docs">
-            KAP Gold Documentation
+            KAP Gold
           </Link>
         </div>
       </div>
