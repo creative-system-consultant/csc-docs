@@ -28,6 +28,11 @@ function HomepageHeader() {
             to="/docs/pmgi-docs">
             TEKUN PMGI Documentation
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/kap-docs">
+            KAP Gold Documentation
+          </Link>
         </div>
       </div>
     </header>
