@@ -32,14 +32,18 @@
 
 @media screen and (max-width: 600px) {
   .buttons {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
-  .buttons :global(.button) {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .buttons :global(.button),
+  .buttons > a.button {
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
-  .buttons :global(.button):last-child {
-    margin-bottom: 0;
+  .buttons :global(.button):last-child,
+  .buttons > a.button:last-child {
+    margin-bottom: 0 !important;
   }
 }
