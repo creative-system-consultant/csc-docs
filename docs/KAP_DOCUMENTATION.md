@@ -1,7 +1,7 @@
 ---
 id: kap-docs
 title: Kasih AP Gold Documentation
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # KAP (Kasih AP Gold) Trading Platform Documentation
