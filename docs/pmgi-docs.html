@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">TEKUN PMGI Documentation | CSC Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://creative-system-consultant.github.io/csc-docs/img/csc-logo.png"><meta data-rh="true" name="twitter:image" content="https://creative-system-consultant.github.io/csc-docs/img/csc-logo.png"><meta data-rh="true" property="og:url" content="https://creative-system-consultant.github.io/csc-docs/docs/pmgi-docs"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TEKUN PMGI Documentation | CSC Docs"><meta data-rh="true" name="description" content="Table of Contents"><meta data-rh="true" property="og:description" content="Table of Contents"><link data-rh="true" rel="icon" href="/csc-docs/img/csc-logo.png"><link data-rh="true" rel="canonical" href="https://creative-system-consultant.github.io/csc-docs/docs/pmgi-docs"><link data-rh="true" rel="alternate" href="https://creative-system-consultant.github.io/csc-docs/docs/pmgi-docs" hreflang="en"><link data-rh="true" rel="alternate" href="https://creative-system-consultant.github.io/csc-docs/docs/pmgi-docs" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TEKUN PMGI Documentation","item":"https://creative-system-consultant.github.io/csc-docs/docs/pmgi-docs"}]}</script><link rel="alternate" type="application/rss+xml" href="/csc-docs/blog/rss.xml" title="CSC Docs RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/csc-docs/blog/atom.xml" title="CSC Docs Atom Feed"><link rel="stylesheet" href="/csc-docs/assets/css/styles.65f3e9ba.css">
-<script src="/csc-docs/assets/js/runtime~main.e77b13e3.js" defer="defer"></script>
+<script src="/csc-docs/assets/js/runtime~main.d321e035.js" defer="defer"></script>
 <script src="/csc-docs/assets/js/main.2e749da9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -301,7 +301,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="requirements">Requirements<a href="#requirements" class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements">​</a></h3>
 <ul>
 <li>PHP ^8.2</li>
-<li>MSSQL Database</li>
+<li><strong>MSSQL Database</strong> (will be set up manually by your DBA or sysadmin)</li>
 <li>Node.js &amp; NPM</li>
 <li>Composer</li>
 </ul>
@@ -313,16 +313,22 @@
 <ol start="2">
 <li><strong>Environment Configuration</strong></li>
 </ol>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cp .env.example .env</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">php artisan key:generate</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cp .env.example .env</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">php artisan key:generate</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Edit .env with your MSSQL database connection details</span><br></span></code></pre></div></div>
 <ol start="3">
 <li><strong>Database Setup</strong></li>
 </ol>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">php artisan migrate</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">php artisan db:seed</span><br></span></code></pre></div></div>
+<blockquote>
+<p><strong>Note:</strong> The MSSQL database will be set up manually. You only need to configure the connection in your <code>.env</code> file. No need to create the database from the app.</p>
+</blockquote>
 <ol start="4">
+<li><strong>Run Migrations and Seeders</strong></li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">php artisan migrate</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">php artisan db:seed</span><br></span></code></pre></div></div>
+<ol start="5">
 <li><strong>Asset Compilation</strong></li>
 </ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm run build</span><br></span></code></pre></div></div>
-<ol start="5">
+<ol start="6">
 <li><strong>Queue Setup</strong></li>
 </ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">php artisan queue:work</span><br></span></code></pre></div></div>
